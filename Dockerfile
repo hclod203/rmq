@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/ubuntu
+FROM ubunutu:18.04
 
 # Add files.
 ADD bin/rabbitmq-start /usr/local/bin/
