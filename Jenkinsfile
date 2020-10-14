@@ -21,7 +21,7 @@ pipeline {
     }
           stage('build') {
               steps{
-                  sh('ls -al')
+                  sh 'docker build -t rabbitmq/rmq:latest .'
               }
               }
               
