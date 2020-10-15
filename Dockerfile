@@ -12,7 +12,7 @@ ADD bin/rabbitmq-start /usr/local/bin/
 
 RUN  apt-get update \
   && apt-get install -y wget \
-  && apt-get install -y gnupg2
+  && apt-get install -y gnupg2 \
   && rm -rf /var/lib/apt/lists/*
 
 # Install RabbitMQ.
