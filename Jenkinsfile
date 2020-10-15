@@ -23,7 +23,6 @@ pipeline {
           stage('build') {
               steps{
 		script {
-			cd 3.8/debian-10/
 			dockerImage = docker.build registry + ":$BUILD_NUMBER"
 		}
               }
