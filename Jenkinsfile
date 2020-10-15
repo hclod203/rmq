@@ -2,6 +2,7 @@
 pipeline {
     environment{
         registry = "hcloud203/rmq"
+	dir = "3.8/debian-10/"
         registryCredential = 'dockerhub_id'
         dockerImage = ''
     }
@@ -23,7 +24,7 @@ pipeline {
               steps{
 		script {
 			sh ('''cd 3.8/debian-10/''')
-			dockerImage = docker.build registry + ":$BUILD_NUMBER" "3.8/debian-10/"
+			dockerImage = docker.build registry + ":$BUILD_NUMBER" dir
 		}
               }
               }
