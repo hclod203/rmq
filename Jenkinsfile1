@@ -21,9 +21,7 @@ pipeline {
     }
           stage('build') {
               steps{
-		script {
-			dockerImage = docker.build registry + ":$BUILD_NUMBER"
-		}
+                  sh 'docker build -t rabbitmq/rmq:latest 3.8/debian-10/'
               }
               }
 
