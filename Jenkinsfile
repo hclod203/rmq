@@ -21,7 +21,7 @@ pipeline {
     }
           stage('build') {
               steps{
-                  sh 'docker build -t rabbitmq/rmq:latest .'
+                  sh 'docker build -t rabbitmq/rmq:latest 3.8/debian-10/
               }
               }
 
