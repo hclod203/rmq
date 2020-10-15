@@ -24,7 +24,7 @@ pipeline {
                   sh 'docker build -t rabbitmq/rmq:latest .'
               }
               }
-              
+
 
     }
 }
