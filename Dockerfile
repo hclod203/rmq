@@ -22,7 +22,7 @@ RUN update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX && \
 RUN echo 'en_GB.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
 RUN echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
 
-COPY /home/ubuntu/rmq/3.8/debian-10/rootfs/rootfs /
+COPY /home/ubuntu/rmq/3.8/debian-10/ /
 RUN /opt/bitnami/scripts/rabbitmq/postunpack.sh
 RUN /opt/bitnami/scripts/locales/add-extra-locales.sh
 ENV BITNAMI_APP_NAME="rabbitmq" \
