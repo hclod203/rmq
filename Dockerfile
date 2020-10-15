@@ -5,10 +5,14 @@
 #
 
 # Pull base image.
-FROM ubuntu
+FROM ubuntu:18.04
 
 # Add files.
 ADD bin/rabbitmq-start /usr/local/bin/
+
+RUN  apt-get update \
+  && apt-get install -y wget \
+  && rm -rf /var/lib/apt/lists/*
 
 # Install RabbitMQ.
 RUN \
