@@ -6,8 +6,9 @@ ENV HOME="/opt/bitnami/rabbitmq/.rabbitmq" \
     OS_FLAVOUR="debian-10" \
     OS_NAME="linux" \
     PATH="/opt/bitnami/erlang/bin:/opt/bitnami/rabbitmq/sbin:/opt/bitnami/common/bin:$PATH"
-
-COPY /home/ubuntu/rmq/3.8/debian-10/prebuildfs /
+ 
+COPY prebuildfs /
+#COPY rmq/3.8/debian-10/prebuildfs/ /
 # Install required system packages and dependencies
 RUN install_packages acl ca-certificates curl gzip libc6 libssl1.1 libtinfo6 locales procps tar zlib1g
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "erlang" "22.3.0-0" --checksum e9b6cba6a355dc2a6cc59829a59240d70cfb247f584a5f65f16fd6754c716166
@@ -22,7 +23,7 @@ RUN update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX && \
 RUN echo 'en_GB.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
 RUN echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
 
-COPY /home/ubuntu/rmq/3.8/debian-10/ /
+ADD rootfs /
 RUN /opt/bitnami/scripts/rabbitmq/postunpack.sh
 RUN /opt/bitnami/scripts/locales/add-extra-locales.sh
 ENV BITNAMI_APP_NAME="rabbitmq" \
