@@ -7,7 +7,7 @@ ENV HOME="/opt/bitnami/rabbitmq/.rabbitmq" \
     OS_NAME="linux" \
     PATH="/opt/bitnami/erlang/bin:/opt/bitnami/rabbitmq/sbin:/opt/bitnami/common/bin:$PATH"
 
-COPY /home/ubuntu/rmq/3.8/debian-10/rootfs/rootfs/prebuildfs /
+COPY /home/ubuntu/rmq/3.8/debian-10/prebuildfs /
 # Install required system packages and dependencies
 RUN install_packages acl ca-certificates curl gzip libc6 libssl1.1 libtinfo6 locales procps tar zlib1g
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "erlang" "22.3.0-0" --checksum e9b6cba6a355dc2a6cc59829a59240d70cfb247f584a5f65f16fd6754c716166
