@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM ubunutu:18.04
+FROM ubuntu
 
 # Add files.
 ADD bin/rabbitmq-start /usr/local/bin/
